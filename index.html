@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cherry'sArchive 🎀</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Sacramento&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --blush-100: #FFF0F5;
+            --blush-200: #FDE2E4;
+            --blush-300: #FFCAD4;
+            --blush-400: #B5E2FA;
+            --blush-accent: #E5989B;
+            --blush-dark: #6B2D5C;
+            --cherry-red: #D62828;
+            --coquette-gold: #D4AF37;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #FFFDF9;
+            color: #4A3E3D;
+            background-image: 
+                radial-gradient(#FFCAD4 0.75px, transparent 0.75px),
+                radial-gradient(#FFCAD4 0.75px, #FFFDF9 0.75px);
+            background-size: 30px 30px;
+            background-position: 0 0, 15px 15px;
+        }
+
+        .font-serif-title {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .font-handwriting {
+            font-family: 'Sacramento', cursive;
+        }
+
+        .font-cursive-accent {
+            font-family: 'Dancing Script', cursive;
+        }
+
+        .coquette-border {
+            border: 2px dashed #FFCAD4;
+        }
+
+        .polaroid-shadow {
+            box-shadow: 0 10px 25px -5px rgba(229, 152, 155, 0.25), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+        }
+
+        .bow-decoration::before {
+            content: "🎀";
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.5rem;
+            z-index: 10;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #FFF0F5;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #FFCAD4;
+            border-radius: 10px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #E5989B;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between selection:bg-[#FFCAD4] selection:text-[#6B2D5C]">
+
+    <!-- Header Navigation -->
+    <header class="sticky top-0 z-40 bg-white/80 backdrop-blur-md border-b border-[#FFCAD4]">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#" class="text-2xl md:text-3xl font-serif-title font-bold text-[#6B2D5C] flex items-center gap-2 group">
+                <span>Cherry'sArchive</span>
+                <span class="text-sm tracking-normal text-[#E5989B] group-hover:rotate-12 transition-transform">🎀</span>
+            </a>
+            
+            <nav class="hidden md:flex items-center gap-6 font-medium text-sm text-[#6B2D5C]">
+                <a href="#gallery" class="hover:text-[#E5989B] transition-colors">Moments</a>
+                <a href="#about" class="hover:text-[#E5989B] transition-colors">About</a>
+                <a href="#diary" class="hover:text-[#E5989B] transition-colors">Diary Entry</a>
+                <a href="#sticky-wall" class="hover:text-[#E5989B] transition-colors">Love Notes</a>
+            </nav>
+
+            <button onclick="openModal()" class="bg-[#FFCAD4] hover:bg-[#E5989B] text-[#6B2D5C] hover:text-white px-4 py-2 rounded-full font-medium text-sm transition-all transform hover:scale-105 shadow-sm flex items-center gap-2">
+                <i data-lucide="plus-circle" class="w-4 h-4"></i>
+                <span>Add Memory</span>
+            </button>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 py-8 flex-grow">
+        
+        <!-- Hero Banner -->
+        <section class="text-center py-12 px-6 rounded-3xl bg-gradient-to-b from-[#FFF0F5] to-white border border-[#FFCAD4] relative overflow-hidden shadow-sm mb-12">
+            <div class="absolute -top-6 -left-6 w-24 h-24 bg-[#FFCAD4]/30 rounded-full blur-xl"></div>
+            <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-[#FFCAD4]/40 rounded-full blur-xl"></div>
+            
+            <div class="inline-block px-4 py-1 rounded-full bg-white border border-[#FFCAD4] text-xs text-[#E5989B] font-semibold uppercase tracking-widest mb-4 shadow-sm">
+                🍒 Welcome To My World
+            </div>
+
+            <h1 class="text-4xl md:text-6xl font-serif-title font-bold text-[#6B2D5C] mb-3">
+                Cherry'sArchive
+            </h1>
+            
+            <p class="font-handwriting text-2xl md:text-3xl text-[#E5989B] mb-6">
+                "Time flies. Take the picture. Keep the memory."
+            </p>
+
+            <p class="max-w-2xl mx-auto text-[#6B2D5C]/80 text-sm md:text-base leading-relaxed italic bg-white/60 p-4 rounded-2xl border border-[#FFCAD4]/50">
+                "Heyoo! Welcome to Cherry's Archive, a collection of my journeys, learnings, and little moments that I want to cherish and look back on someday." 🌸✨
+            </p>
+        </section>
+
+        <!-- Memory Gallery Section -->
+        <section id="gallery" class="mb-16">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
+                <div>
+                    <h2 class="text-2xl font-serif-title text-[#6B2D5C] font-bold flex items-center gap-2">
+                        <span>Polaroid Gallery</span>
+                        <span class="text-lg">📷</span>
+                    </h2>
+                    <p class="text-xs text-[#E5989B]">Snapshots of soft moments and precious days</p>
+                </div>
+
+                <!-- Category Filters -->
+                <div class="flex flex-wrap gap-2">
+                    <button onclick="filterMemories('all')" class="filter-btn active bg-[#6B2D5C] text-white px-3 py-1.5 rounded-full text-xs font-medium transition-all">All</button>
+                    <button onclick="filterMemories('journeys')" class="filter-btn bg-white hover:bg-[#FFF0F5] text-[#6B2D5C] border border-[#FFCAD4] px-3 py-1.5 rounded-full text-xs font-medium transition-all">Journeys ✈️</button>
+                    <button onclick="filterMemories('learnings')" class="filter-btn bg-white hover:bg-[#FFF0F5] text-[#6B2D5C] border border-[#FFCAD4] px-3 py-1.5 rounded-full text-xs font-medium transition-all">Learnings 📖</button>
+                    <button onclick="filterMemories('little-moments')" class="filter-btn bg-white hover:bg-[#FFF0F5] text-[#6B2D5C] border border-[#FFCAD4] px-3 py-1.5 rounded-full text-xs font-medium transition-all">Little Moments 🎀</button>
+                </div>
+            </div>
+
+            <!-- Polaroid Grid -->
+            <div id="memoryGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Items populated by JS -->
+            </div>
+        </section>
+
+        <!-- Diary Entry Feature -->
+        <section id="diary" class="mb-16">
+            <div class="bg-white rounded-3xl p-6 md:p-8 border border-[#FFCAD4] polaroid-shadow relative">
+                <div class="absolute top-4 right-4 text-3xl">🎀</div>
+                <h2 class="text-2xl font-serif-title text-[#6B2D5C] font-bold mb-2">Today's Reflection</h2>
+                <p class="text-xs text-[#E5989B] mb-6">Dear Diary... a place to hold my secret thoughts</p>
+
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="md:col-span-1 border-r-0 md:border-r border-[#FFCAD4] pr-0 md:pr-6 flex flex-col justify-between">
+                        <div>
+                            <span class="text-xs uppercase font-bold text-[#E5989B] tracking-wider">Date</span>
+                            <p class="text-lg font-serif-title font-bold text-[#6B2D5C]" id="currentDate">September 30, 2026</p>
+                            
+                            <span class="text-xs uppercase font-bold text-[#E5989B] tracking-wider mt-4 block">Mood Today</span>
+                            <div class="flex gap-2 mt-1">
+                                <span class="cursor-pointer text-xl hover:scale-125 transition-transform" title="Grateful">🌸</span>
+                                <span class="cursor-pointer text-xl hover:scale-125 transition-transform" title="Cozy">☕</span>
+                                <span class="cursor-pointer text-xl hover:scale-125 transition-transform" title="Happy">🍒</span>
+                                <span class="cursor-pointer text-xl hover:scale-125 transition-transform" title="Inspired">✨</span>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 p-4 rounded-xl bg-[#FFF0F5] border border-[#FFCAD4]">
+                            <p class="text-xs text-[#6B2D5C] italic">"Softness is not weakness; it is the courage to stay gentle in a tough world."</p>
+                        </div>
+                    </div>
+
+                    <div class="md:col-span-2">
+                        <textarea id="diaryInput" placeholder="Write down today's thoughts, lessons, or moments..." class="w-full h-36 p-4 rounded-2xl bg-[#FFF0F5]/50 border border-[#FFCAD4] focus:outline-none focus:ring-2 focus:ring-[#E5989B] text-sm text-[#6B2D5C] resize-none mb-3"></textarea>
+                        <div class="flex justify-end">
+                            <button onclick="saveDiary()" class="bg-[#6B2D5C] hover:bg-[#E5989B] text-white px-5 py-2 rounded-full text-xs font-semibold transition-all shadow-sm">Save Entry 💌</button>
+                        </div>
+                        <div id="diarySavedAlert" class="hidden mt-2 text-xs text-green-600 font-medium">Saved to your diary archive! ✨</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sticky Note Wall -->
+        <section id="sticky-wall" class="mb-12">
+            <div class="text-center mb-8">
+                <h2 class="text-2xl font-serif-title text-[#6B2D5C] font-bold">Little Love Notes</h2>
+                <p class="text-xs text-[#E5989B]">Sweet reminders, quotes, and affirmations</p>
+            </div>
+
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4" id="stickyNotesGrid">
+                <div class="bg-[#FFF0F5] p-4 rounded-2xl border border-[#FFCAD4] transform -rotate-2 hover:rotate-0 transition-transform shadow-sm">
+                    <span class="text-xs text-[#E5989B] font-bold block mb-1">Affirmation</span>
+                    <p class="font-handwriting text-xl text-[#6B2D5C]">I am growing at my own beautiful pace.</p>
+                </div>
+                <div class="bg-[#FDE2E4] p-4 rounded-2xl border border-[#FFCAD4] transform rotate-3 hover:rotate-0 transition-transform shadow-sm">
+                    <span class="text-xs text-[#E5989B] font-bold block mb-1">Reminder</span>
+                    <p class="font-handwriting text-xl text-[#6B2D5C]">Drink water and take a slow breath! 🌸</p>
+                </div>
+                <div class="bg-[#FFCAD4]/30 p-4 rounded-2xl border border-[#FFCAD4] transform -rotate-1 hover:rotate-0 transition-transform shadow-sm">
+                    <span class="text-xs text-[#E5989B] font-bold block mb-1">Favorite Quote</span>
+                    <p class="font-handwriting text-xl text-[#6B2D5C]">Collect moments, not things.</p>
+                </div>
+                <div class="bg-[#FFF0F5] p-4 rounded-2xl border border-[#FFCAD4] transform rotate-2 hover:rotate-0 transition-transform shadow-sm">
+                    <span class="text-xs text-[#E5989B] font-bold block mb-1">Cherry's Note</span>
+                    <p class="font-handwriting text-xl text-[#6B2D5C]">Always choose kindness & sweetness 🍒</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal for Adding Memory -->
+    <div id="memoryModal" class="fixed inset-0 bg-black/40 backdrop-blur-sm z-50 flex items-center justify-center hidden p-4">
+        <div class="bg-white rounded-3xl p-6 md:p-8 max-w-md w-full border-2 border-[#FFCAD4] shadow-2xl relative">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-[#6B2D5C] hover:text-[#E5989B]">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+
+            <h3 class="text-2xl font-serif-title font-bold text-[#6B2D5C] mb-1">New Memory 🎀</h3>
+            <p class="text-xs text-[#E5989B] mb-6">Add a photo and caption to your archive</p>
+
+            <form id="memoryForm" onsubmit="addMemory(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-[#6B2D5C] mb-1">Title</label>
+                    <input type="text" id="memTitle" required placeholder="e.g. Afternoon Coffee & Books" class="w-full px-3 py-2 rounded-xl border border-[#FFCAD4] text-sm focus:outline-none focus:ring-2 focus:ring-[#E5989B]">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-[#6B2D5C] mb-1">Category</label>
+                    <select id="memCategory" class="w-full px-3 py-2 rounded-xl border border-[#FFCAD4] text-sm focus:outline-none focus:ring-2 focus:ring-[#E5989B]">
+                        <option value="journeys">Journeys ✈️</option>
+                        <option value="learnings">Learnings 📖</option>
+                        <option value="little-moments">Little Moments 🎀</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-[#6B2D5C] mb-1">Image URL</label>
+                    <input type="url" id="memImage" required placeholder="https://images.unsplash.com/..." class="w-full px-3 py-2 rounded-xl border border-[#FFCAD4] text-sm focus:outline-none focus:ring-2 focus:ring-[#E5989B]">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-[#6B2D5C] mb-1">Caption / Note</label>
+                    <textarea id="memCaption" required placeholder="Write a short memory note..." class="w-full px-3 py-2 rounded-xl border border-[#FFCAD4] text-sm focus:outline-none focus:ring-2 focus:ring-[#E5989B] h-20 resize-none"></textarea>
+                </div>
+
+                <div class="pt-2">
+                    <button type="submit" class="w-full bg-[#6B2D5C] hover:bg-[#E5989B] text-white py-2.5 rounded-full text-sm font-semibold transition-colors shadow-md">
+                        Save to Archive 🍒
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-[#FFCAD4] py-8 text-center text-xs text-[#6B2D5C]/70">
+        <div class="max-w-6xl mx-auto px-4">
+            <p class="font-handwriting text-2xl text-[#E5989B] mb-1">Cherry's Archive</p>
+            <p>© 2026 Cherry's Archive • Made with 🎀 & 🍒</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        // Initial Sample Data
+        const initialMemories = [
+            {
+                id: 1,
+                title: "Soft Morning Walks",
+                category: "little-moments",
+                image: "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&q=80&w=600",
+                caption: "Finding peace in quiet morning strolls and light sunbeams.",
+                date: "Sep 2026"
+            },
+            {
+                id: 2,
+                title: "Study Sessions & Matcha",
+                category: "learnings",
+                image: "https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&q=80&w=600",
+                caption: "Learning new things every day with a warm cup of matcha.",
+                date: "Aug 2026"
+            },
+            {
+                id: 3,
+                title: "Weekend Getaways",
+                category: "journeys",
+                image: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&q=80&w=600",
+                caption: "Exploring pretty places, making memories along the coast.",
+                date: "Jul 2026"
+            }
+        ];
+
+        let memories = JSON.parse(localStorage.getItem('cherrys_memories')) || initialMemories;
+
+        function renderMemories(filter = 'all') {
+            const grid = document.getElementById('memoryGrid');
+            grid.innerHTML = '';
+
+            const filtered = filter === 'all' ? memories : memories.filter(m => m.category === filter);
+
+            filtered.forEach(item => {
+                const card = document.createElement('div');
+                card.className = "bg-white p-4 pb-6 rounded-2xl border border-[#FFCAD4] polaroid-shadow transform hover:-translate-y-1 transition-all duration-300 relative group";
+                card.innerHTML = `
+                    <div class="relative overflow-hidden rounded-xl mb-3 aspect-square bg-[#FFF0F5]">
+                        <img src="${item.image}" alt="${item.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-2 right-2 bg-white/80 backdrop-blur-md px-2 py-0.5 rounded-full text-[10px] text-[#6B2D5C] font-semibold">${item.date}</span>
+                    </div>
+                    <div class="px-1 text-center">
+                        <h3 class="font-serif-title font-bold text-lg text-[#6B2D5C] mb-1">${item.title}</h3>
+                        <p class="font-handwriting text-xl text-[#E5989B] leading-tight">${item.caption}</p>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function filterMemories(category) {
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('bg-[#6B2D5C]', 'text-white');
+                btn.classList.add('bg-white', 'text-[#6B2D5C]');
+            });
+            event.target.classList.remove('bg-white', 'text-[#6B2D5C]');
+            event.target.classList.add('bg-[#6B2D5C]', 'text-white');
+            renderMemories(category);
+        }
+
+        function openModal() {
+            document.getElementById('memoryModal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('memoryModal').classList.add('hidden');
+        }
+
+        function addMemory(e) {
+            e.preventDefault();
+            const newMemory = {
+                id: Date.now(),
+                title: document.getElementById('memTitle').value,
+                category: document.getElementById('memCategory').value,
+                image: document.getElementById('memImage').value,
+                caption: document.getElementById('memCaption').value,
+                date: 'Just Now'
+            };
+
+            memories.unshift(newMemory);
+            localStorage.setItem('cherrys_memories', JSON.stringify(memories));
+            renderMemories();
+            closeModal();
+            document.getElementById('memoryForm').reset();
+        }
+
+        function saveDiary() {
+            const alert = document.getElementById('diarySavedAlert');
+            alert.classList.remove('hidden');
+            setTimeout(() => alert.classList.add('hidden'), 3000);
+        }
+
+        // Render on load
+        renderMemories();
+    </script>
+</body>
+</html>

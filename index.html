@@ -360,19 +360,6 @@
                 image: document.getElementById('memImage').value,
                 caption: document.getElementById('memCaption').value,
                 date: 'Just Now'
-            };
-
-            memories.unshift(newMemory);
-            localStorage.setItem('cherrys_memories', JSON.stringify(memories));
-            renderMemories();
-            closeModal();
-            document.getElementById('memoryForm').reset();
-        }
-
-        function saveDiary() {
-            const alert = document.getElementById('diarySavedAlert');
-            alert.classList.remove('hidden');
-            setTimeout(() => alert.classList.add('hidden'), 3000);
         }
 
         // Render on load
